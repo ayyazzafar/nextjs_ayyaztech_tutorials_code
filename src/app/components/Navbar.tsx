@@ -21,7 +21,7 @@ export const Navbar = () => {
         "flex-col",
       ];
     } else {
-      menuClasses.push("hidden");
+      menuClasses = ["hidden", "md:flex"];
     }
 
     return menuClasses.join(" ");
