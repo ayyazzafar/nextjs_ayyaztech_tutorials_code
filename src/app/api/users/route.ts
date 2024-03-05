@@ -1,6 +1,6 @@
 import axios from "axios";
 import { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import { z } from "zod";
 const users = [
@@ -21,7 +21,7 @@ const users = [
 const userSchema = z.object({
   name: z.string().min(3).max(50),
 });
-export async function GET(request: NextApiRequest) {
+export async function GET(request: NextRequest) {
   try {
     return NextResponse.json(users);
   } catch (error: any) {
